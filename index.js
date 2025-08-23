@@ -12,8 +12,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
+
+
 app.get("/", (req, res) => {
   res.render("index.ejs");
+});
+
+app.get("/next", (req, res) => {
+  if (dialogueIndex < dialogue.length) {
+    dialogueIndex++;
+    res.redirect("/");
+  } else {
+    res.send("done");
+  }
 });
 
 
