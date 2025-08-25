@@ -18,13 +18,8 @@ app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
-app.get("/next", (req, res) => {
-  if (dialogueIndex < dialogue.length) {
-    dialogueIndex++;
-    res.redirect("/");
-  } else {
-    res.send("done");
-  }
+app.get("/level1", (req, res) => {
+  res.render("level1.ejs");
 });
 
 
