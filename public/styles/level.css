@@ -14,10 +14,72 @@
 .bg {
     width: 100%;
     height: 100vh;
-    background-image: url(/img/map.png);
+    background-color: black;
+    /* background-image: url(/img/map.png); */
     background-size: cover;
-        overflow: hidden;
+    overflow: hidden;
 }
+
+.question {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    color: var(--text-color);
+}
+
+.question-container {
+    height: fit-content;
+    width: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--textbox-color);
+    border: 14px solid var(--textbox-border);
+    border-radius: 15px;
+    gap: 30px;
+}
+
+.question-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.question-container label {
+    padding: 15px 25px;
+    border-radius: 10px;
+    background-color: var(--textbox-border);
+}
+
+.question-container form input {
+    display: none;
+}
+
+.clock-icon {
+    position: relative;
+}
+
+.clock-icon img {
+    height: 100px;
+}
+
+.clock-icon {
+    position: relative; /* penting supaya absolute anaknya ngikut ke sini */
+}
+
+.clock-icon p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
 
 .textbox {
     background-color: var(--textbox-color);

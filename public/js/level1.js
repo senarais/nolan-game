@@ -151,10 +151,10 @@ async function showDialogue() {
 
 // First line
 textBox.classList.add("hidden");
-setTimeout(() => {
-  textBox.classList.remove("hidden");
-  showDialogue();
-}, 2000);
+// setTimeout(() => {
+//   textBox.classList.remove("hidden");
+//   showDialogue();
+// }, 2000);
 
 function nextDialogue(event) {
   if (event.type === "keydown") {

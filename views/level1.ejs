@@ -11,13 +11,42 @@
 </head>
 <body>
     <div class="bg">
-        <div class="textbox">
+        <div class="textbox hidden">
             <div class="textbox-name "><p class="name"><%= locals.name %></p></div>
             <p class="text"><%= locals.text %></p>
             <img src="">
         </div>
+
+        <div class="question">
+            <img src="img/nolan-full.png" alt="Character Image">
+            <div class="question-container">
+                <p>What is the capital of indonesia</p>
+                <form>
+                    <label>
+                        <input type="radio" name="answer" value="A" onchange="this.form.submit()">
+                        Pilihan A
+                    </label>
+                    <label>
+                        <input type="radio" name="answer" value="B" onchange="this.form.submit()">
+                        Pilihan B
+                    </label>
+                    <label>
+                        <input type="radio" name="answer" value="C" onchange="this.form.submit()">
+                        Pilihan C
+                    </label>
+                    <label>
+                        <input type="radio" name="answer" value="D" onchange="this.form.submit()">
+                        Pilihan D
+                    </label>
+                </form>
+                <div class="clock-icon">
+                    <img src="/img/clock.png" alt="Clock Image">
+                    <p>10</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="/js/level1.js"></script>
+    <!-- <script src="/js/level1.js"></script> -->
 </body>
 </html>
