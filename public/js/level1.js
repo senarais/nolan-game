@@ -183,3 +183,78 @@ function skipDialogue() {
     showDialogue();
   }
 }
+
+
+
+
+const questions = {
+  1: {
+    question: "What is the capital of France?",
+    answers: [
+      "A. Madrid",
+      "B. Berlin",
+      "C. Paris",
+      "D. Rome"
+    ],
+    rightAnswer: "C"
+  },
+
+  2: {
+    question: "Which planet is known as the Red Planet?",
+    answers: [
+      "A. Venus",
+      "B. Mars",
+      "C. Jupiter",
+      "D. Saturn"
+    ],
+    rightAnswer: "B"
+  },
+
+  3: {
+    question: "Who wrote 'Romeo and Juliet'?",
+    answers: [
+      "A. Charles Dickens",
+      "B. William Shakespeare",
+      "C. Mark Twain",
+      "D. Jane Austen"
+    ],
+    rightAnswer: "B"
+  },
+
+  4: {
+    question: "Which is the largest ocean on Earth?",
+    answers: [
+      "A. Atlantic Ocean",
+      "B. Indian Ocean",
+      "C. Arctic Ocean",
+      "D. Pacific Ocean"
+    ],
+    rightAnswer: "D"
+  }
+};
+
+let currentQuestion = 1;
+
+function showQuestion() {
+  const questionElement = document.querySelector(".question p");
+  const questionText = questions[currentQuestion].question;
+  const answerElement = document.querySelectorAll(".question-container label span");
+  const answerText = questions[currentQuestion].answers;
+
+  for (let i = 0; i < answerText.length; i++) {
+    answerElement[i].textContent = answerText[i];
+  }
+  questionElement.textContent = questionText;
+  document.querySelector(".question").classList.remove("hidden");
+} showQuestion();
+
+function checkAnswer(answer) {
+  const rightAnswer = questions[currentQuestion].rightAnswer;
+  const userAnswer = answer.value;
+
+  if (rightAnswer === userAnswer) {
+    alert("Yey benar !");
+  } else {
+    alert("salah goblok");
+  }
+}

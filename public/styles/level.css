@@ -20,67 +20,6 @@
     overflow: hidden;
 }
 
-.question {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 150px;
-    color: var(--text-color);
-}
-
-.question-container {
-    height: fit-content;
-    width: 400px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: var(--textbox-color);
-    border: 14px solid var(--textbox-border);
-    border-radius: 15px;
-    gap: 30px;
-}
-
-.question-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.question-container label {
-    padding: 15px 25px;
-    border-radius: 10px;
-    background-color: var(--textbox-border);
-}
-
-.question-container form input {
-    display: none;
-}
-
-.clock-icon {
-    position: relative;
-}
-
-.clock-icon img {
-    height: 100px;
-}
-
-.clock-icon {
-    position: relative; /* penting supaya absolute anaknya ngikut ke sini */
-}
-
-.clock-icon p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-}
-
-
 .textbox {
     background-color: var(--textbox-color);
     width: 70%;
@@ -91,6 +30,7 @@
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 10;
 }
 
 .textbox-name {
@@ -129,6 +69,71 @@
     left: 40px;
     z-index: -1; /* puts it behind the textbox */
 }
+
+.question {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.question-container {
+    height: fit-content;
+    width: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--textbox-color);
+    border: 14px solid var(--textbox-border);
+    border-radius: 15px;
+    gap: 30px;
+}
+
+.question-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.question-container label {
+    padding: 15px 25px;
+    border-radius: 10px;
+    background-color: var(--textbox-border);
+    cursor: pointer;
+    text-align: left;
+}
+
+.question-container form input {
+    display: none;
+}
+
+.clock-icon {
+    position: relative;
+    z-index: 0;
+}
+
+.clock-icon img {
+    height: 100px;
+}
+
+.clock-icon {
+    position: relative; /* penting supaya absolute anaknya ngikut ke sini */
+}
+
+.clock-icon p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
 
 .hidden {
     display: none;
