@@ -234,27 +234,102 @@ const questions = {
 };
 
 let currentQuestion = 1;
+let questionCurrentTime = 10;
+let questionTimeout;
+const timeText = document.querySelector(".clock-icon p");
+const answerElement = document.querySelectorAll(".question-container button");
+
 
 function showQuestion() {
   const questionElement = document.querySelector(".question p");
   const questionText = questions[currentQuestion].question;
-  const answerElement = document.querySelectorAll(".question-container label span");
   const answerText = questions[currentQuestion].answers;
+
 
   for (let i = 0; i < answerText.length; i++) {
     answerElement[i].textContent = answerText[i];
   }
+
+  answerElement.forEach(button => {
+    button.addEventListener("click", handleButton);
+  });
+
+  timeText.textContent = questionCurrentTime;
   questionElement.textContent = questionText;
+  questionTimeout = setTimeout(() => {
+    if (questionCurrentTime == 0) {
+      checkAnswer();
+    } 
+    else if (questionCurrentTime > 0) {
+      questionCurrentTime--;
+      timeText.textContent = questionCurrentTime;
+      showQuestion();
+    }
+  }, 1000);
   document.querySelector(".question").classList.remove("hidden");
 } showQuestion();
 
 function checkAnswer(answer) {
   const rightAnswer = questions[currentQuestion].rightAnswer;
+
+  if (!answer) {
+    // berarti waktu habis / gak ada jawaban
+    const wrongAudio = new Audio("/audio/wrong-answer.mp3");
+    wrongAudio.play();
+
+    clearTimeout(questionTimeout);
+    questionCurrentTime = 10;
+    timeText.textContent = questionCurrentTime;
+    answerElement.forEach(button => {
+      button.removeEventListener("click", handleButton);
+    });
+
+    setTimeout(() => {
+      showQuestion();
+    }, 2000);
+
+    return; // stop supaya gak error
+  }
+
   const userAnswer = answer.value;
+  const answerContainer = answer.parentElement;
+
+  if (userAnswer !== rightAnswer) {
+    answerContainer.style.backgroundColor = "#ff5757";
+    const wrongAudio = new Audio("/audio/wrong-answer.mp3");
+    wrongAudio.play();
+
+    clearTimeout(questionTimeout);
+    questionCurrentTime = 10;
+    timeText.textContent = questionCurrentTime;
+    answerElement.forEach(button => {
+      button.removeEventListener("click", handleButton);
+    });
+    setTimeout(() => {
+      answerContainer.style.backgroundColor = "";
+      showQuestion();
+    }, 2000);
+  }
 
   if (rightAnswer === userAnswer) {
-    alert("Yey benar !");
-  } else {
-    alert("salah goblok");
+    answerContainer.style.backgroundColor = "#48ae51";
+    const correctAudio = new Audio("/audio/right-answer.mp3");
+    correctAudio.play();
+    clearTimeout(questionTimeout);
+    questionCurrentTime = 10;
+    timeText.textContent = questionCurrentTime;
+    answerElement.forEach(button => {
+      button.removeEventListener("click", handleButton);
+    });
+    currentQuestion++;
+    setTimeout(() => {
+      answerContainer.style.backgroundColor = "";
+      showQuestion();
+    }, 2000);
+
   }
+}
+
+function handleButton() {
+  checkAnswer(this);
 }

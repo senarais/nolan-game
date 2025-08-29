@@ -107,6 +107,13 @@
     background-color: var(--textbox-border);
     cursor: pointer;
     text-align: left;
+    color: var(--text-color);
+}
+
+.question-container button {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
 }
 
 .question-container form input {
