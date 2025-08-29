@@ -238,13 +238,14 @@ let questionCurrentTime = 10;
 let questionTimeout;
 const timeText = document.querySelector(".clock-icon p");
 const answerElement = document.querySelectorAll(".question-container button");
+const clockTick = new Audio("/audio/clock-tick.mp3");
 
 
 function showQuestion() {
   const questionElement = document.querySelector(".question p");
   const questionText = questions[currentQuestion].question;
   const answerText = questions[currentQuestion].answers;
-
+ 
 
   for (let i = 0; i < answerText.length; i++) {
     answerElement[i].textContent = answerText[i];
@@ -263,11 +264,15 @@ function showQuestion() {
     else if (questionCurrentTime > 0) {
       questionCurrentTime--;
       timeText.textContent = questionCurrentTime;
+      clockTick.play();
       showQuestion();
     }
   }, 1000);
   document.querySelector(".question").classList.remove("hidden");
-} showQuestion();
+} 
+
+
+
 
 function checkAnswer(answer) {
   const rightAnswer = questions[currentQuestion].rightAnswer;
@@ -283,6 +288,8 @@ function checkAnswer(answer) {
     answerElement.forEach(button => {
       button.removeEventListener("click", handleButton);
     });
+    clockTick.pause();
+    clockTick.currentTime = 0;
 
     setTimeout(() => {
       showQuestion();
@@ -305,6 +312,8 @@ function checkAnswer(answer) {
     answerElement.forEach(button => {
       button.removeEventListener("click", handleButton);
     });
+    clockTick.pause();
+    clockTick.currentTime = 0;
     setTimeout(() => {
       answerContainer.style.backgroundColor = "";
       showQuestion();
@@ -321,6 +330,8 @@ function checkAnswer(answer) {
     answerElement.forEach(button => {
       button.removeEventListener("click", handleButton);
     });
+    clockTick.pause();
+    clockTick.currentTime = 0;
     currentQuestion++;
     setTimeout(() => {
       answerContainer.style.backgroundColor = "";
@@ -329,6 +340,26 @@ function checkAnswer(answer) {
 
   }
 }
+
+function startBattle() {
+  const battle = document.querySelector(".battleStart");
+  const battleStartAudio = new Audio("/audio/battle-start.mp3");
+
+  battleStartAudio.play();
+
+  battle.classList.remove("hidden"); // reset animasi kalau sudah ada
+  battle.classList.remove("battleTransition"); // reset animasi kalau sudah ada
+  void battle.offsetWidth;                     // hack biar animasi bisa replay
+  battle.classList.add("battleTransition");
+
+  setTimeout(() => {
+    battle.classList.add("hidden");
+    showQuestion();
+  }, 2000);
+} 
+setTimeout(() => {
+  startBattle();
+}, 2000);
 
 function handleButton() {
   checkAnswer(this);
