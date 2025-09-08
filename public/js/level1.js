@@ -1,3 +1,24 @@
+let timelineIndex = 1;
+
+function timeline() {
+  if (timelineIndex === 1) {
+    showDialogue();
+  }
+  if (timelineIndex === 2) {
+    showDialogue();
+  }
+  if (timelineIndex === 2) {
+    showDialogue();
+  }
+  if (timelineIndex === 2) {
+    showDialogue();
+  }
+}
+
+setTimeout(() => {
+  timeline();
+}, 2000);
+
 const dialogues = {
   1: [
     { name: "Narrator", text: "Bob pulls Alice into a warm hug, his arms wrapping around her fully.", img: "" },
@@ -79,6 +100,13 @@ const dialogues = {
     { name: "Alice", text: "Promise we’ll always be like this?", img: "/img/eliza.png" },
     { name: "Bob", text: "Always. No matter what.", img: "/img/nolan.png" },
     { name: "Narrator", text: "Alice smiles, resting her head on his chest as they drift into comfortable silence.", img: "" }
+  ],
+
+  8: [
+    { name: "Pirate", text: "Haharr! Enough with the child's play! Let's see if ye have the wits for a real pirate's riddle!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Blast it! A lucky guess, ye scurvy dog! But ye'll not be gettin' past this next one!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Shiver me timbers! How'd a landlubber like you figure that out?! This is me final trick!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Arrrgh! Curses! The treasure is yours... for now. But this captain will sail again!", img: "/img/pirate.png" }
   ]
 };
 
@@ -132,6 +160,8 @@ async function showDialogue() {
     const nameDisplay = dialogues[currentDialogue][dialogueIndex].name;
     const imgDisplay = dialogues[currentDialogue][dialogueIndex].img;
     
+    textBox.classList.remove("hidden");
+
     if (nameDisplay === "Narrator"){
       textboxElement.classList.add("hidden");
       imgElement.src = imgDisplay;
@@ -145,7 +175,9 @@ async function showDialogue() {
   } else {
     dialogueIndex = 0;
     currentDialogue++;
-    showDialogue();
+    timelineIndex++;
+    textBox.classList.add("hidden");
+    timeline();
   }
 }
 
@@ -269,7 +301,12 @@ function showQuestion() {
     }
   }, 1000);
   document.querySelector(".question").classList.remove("hidden");
-} 
+}
+
+function nextQuestion() {
+  dialogueIndex++;
+  showQuestion();
+}
 
 
 
@@ -357,9 +394,9 @@ function startBattle() {
     showQuestion();
   }, 2000);
 } 
-setTimeout(() => {
-  startBattle();
-}, 2000);
+// setTimeout(() => {
+//   startBattle();
+// }, 2000);
 
 function handleButton() {
   checkAnswer(this);
