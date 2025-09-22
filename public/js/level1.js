@@ -17,9 +17,9 @@ function timeline() {
   }
 }
 
-setTimeout(() => {
-  timeline();
-}, 2000);
+// setTimeout(() => {
+//   timeline();
+// }, 2000);
 
 const dialogues = {
 
