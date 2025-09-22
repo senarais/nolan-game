@@ -22,6 +22,14 @@ setTimeout(() => {
 }, 2000);
 
 const dialogues = {
+
+  0: [
+    { name: "Pirate", text: "Haharr! Enough with the child's play! Let's see if ye have the wits for a real pirate's riddle!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Blast it! A lucky guess, ye scurvy dog! But ye'll not be gettin' past this next one!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Shiver me timbers! How'd a landlubber like you figure that out?! This is me final trick!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Arrrgh! Curses! The treasure is yours... for now. But this captain will sail again!", img: "/img/pirate.png" }
+  ],
+
   1: [
     { name: "Narrator", text: "Bob and Alice meet at the park, the sun shining brightly.", img: "" },
     { name: "Bob", text: "Glad you made it, Alice! Ready for today’s adventure?", img: "/img/nolan.png" },
@@ -69,13 +77,6 @@ const dialogues = {
     { name: "Alice", text: "That was actually really fun.", img: "/img/eliza.png" },
     { name: "Bob", text: "Yeah. Who knew a map could make the day so exciting?", img: "/img/nolan.png" },
     { name: "Narrator", text: "They sit back on the bench, smiling at the small adventure.", img: "" }
-  ],
-
-  8: [
-    { name: "Pirate", text: "Haharr! Enough with the child's play! Let's see if ye have the wits for a real pirate's riddle!", img: "/img/pirate.png" },
-    { name: "Pirate", text: "Blast it! A lucky guess, ye scurvy dog! But ye'll not be gettin' past this next one!", img: "/img/pirate.png" },
-    { name: "Pirate", text: "Shiver me timbers! How'd a landlubber like you figure that out?! This is me final trick!", img: "/img/pirate.png" },
-    { name: "Pirate", text: "Arrrgh! Curses! The treasure is yours... for now. But this captain will sail again!", img: "/img/pirate.png" }
   ]
 };
 
@@ -128,13 +129,9 @@ async function showDialogue() {
 
   if (battleStarted === true && savedCurrentDialogue === undefined) {
     savedCurrentDialogue = currentDialogue;
-    currentDialogue = 8;
+    currentDialogue = 0;
   }
 
-  if (battleStarted === false && savedCurrentDialogue !== undefined) {
-    savedCurrentDialogue++;
-    currentDialogue = savedCurrentDialogue;
-  }
 
   if (dialogueIndex < dialogues[currentDialogue].length) {
     const dialogueDisplay = dialogues[currentDialogue][dialogueIndex].text;
@@ -268,6 +265,8 @@ const clockTick = new Audio("/audio/clock-tick.mp3");
 function showQuestion() {
   if (currentQuestion > totalQuestions) {
     battleStarted = false;
+    savedCurrentDialogue++;
+    currentDialogue = savedCurrentDialogue;
     dialogueIndex = 0;
     timelineIndex++;
     timeline();
