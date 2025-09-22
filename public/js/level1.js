@@ -17,9 +17,9 @@ function timeline() {
   }
 }
 
-// setTimeout(() => {
-//   timeline();
-// }, 2000);
+setTimeout(() => {
+  timeline();
+}, 2000);
 
 const dialogues = {
 
@@ -327,10 +327,13 @@ function checkAnswer(answer) {
     });
     clockTick.pause();
     clockTick.currentTime = 0;
+    dialogueIndex = 0;
+    currentQuestion = 1;
+
 
     setTimeout(() => {
-      showQuestion();
-    }, 2000);
+      gameOver();
+    }, 400);
 
     return; // stop supaya gak error
   }
@@ -351,10 +354,15 @@ function checkAnswer(answer) {
     });
     clockTick.pause();
     clockTick.currentTime = 0;
+    dialogueIndex = 0;
+    currentQuestion = 1;
+
+    
     setTimeout(() => {
       answerContainer.style.backgroundColor = "";
-      showQuestion();
-    }, 2000);
+      gameOver();
+    }, 400);
+    return;
   }
 
   if (rightAnswer === userAnswer) {
@@ -398,6 +406,23 @@ function startBattle() {
 // setTimeout(() => {
 //   startBattle();
 // }, 2000);
+
+const gameOverContainer = document.querySelector(".gameover");
+const restartButton = document.querySelector(".gameover a");
+function gameOver() {
+  gameOverContainer.classList.remove("hidden");
+  restartButton.addEventListener("click", restartGame);
+}
+
+function restartGame() {
+  // setTimeout(() => {
+  //   gameOverContainer.classList.add("hidden");
+  //   timeline();
+  // }, 1000);
+  gameOverContainer.classList.add("hidden");
+  document.querySelector(".question").classList.add("hidden");
+  timeline();
+}
 
 function handleButton() {
   checkAnswer(this);
