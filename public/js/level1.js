@@ -265,7 +265,6 @@ const clockTick = new Audio("/audio/clock-tick.mp3");
 function showQuestion() {
   if (currentQuestion > totalQuestions) {
     battleStarted = false;
-    savedCurrentDialogue++;
     currentDialogue = savedCurrentDialogue;
     dialogueIndex = 0;
     timelineIndex++;
@@ -390,12 +389,15 @@ function startBattle() {
   battleStarted = true;
   const battle = document.querySelector(".battleStart");
   const battleStartAudio = new Audio("/audio/battle-start.mp3");
+  const bg = document.querySelector(".bg");
+
 
   battleStartAudio.play();
 
   battle.classList.remove("hidden"); // reset animasi kalau sudah ada
   battle.classList.remove("battleTransition"); // reset animasi kalau sudah ada
   void battle.offsetWidth;                     // hack biar animasi bisa replay
+  bg.style.backgroundImage = "url(/img/map-blur.png)";
   battle.classList.add("battleTransition");
 
   setTimeout(() => {
@@ -406,6 +408,23 @@ function startBattle() {
 // setTimeout(() => {
 //   startBattle();
 // }, 2000);
+
+function transition() {
+  const transition = document.querySelector(".transition");
+  const transitionAudio = new Audio("/audio/battle-start.mp3");
+
+  transitionAudio.play();
+
+  transition.classList.remove("hidden"); // reset animasi kalau sudah ada
+  transition.classList.remove("battleTransition"); // reset animasi kalau sudah ada
+  void transition.offsetWidth;                     // hack biar animasi bisa replay
+  transition.classList.add("battleTransition");
+
+  setTimeout(() => {
+    transition.classList.add("hidden");
+    showQuestion();
+  }, 2000);
+}
 
 const gameOverContainer = document.querySelector(".gameover");
 const restartButton = document.querySelector(".gameover a");
