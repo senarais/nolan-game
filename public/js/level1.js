@@ -23,62 +23,79 @@ setTimeout(() => {
 
 const dialogues = {
 
+  // 0 — Pirate reacts to correct answers (7 riddles total)
   0: [
-    { name: "Pirate", text: "Haharr! Enough with the child's play! Let's see if ye have the wits for a real pirate's riddle!", img: "/img/pirate.png" },
-    { name: "Pirate", text: "Blast it! A lucky guess, ye scurvy dog! But ye'll not be gettin' past this next one!", img: "/img/pirate.png" },
-    { name: "Pirate", text: "Shiver me timbers! How'd a landlubber like you figure that out?! This is me final trick!", img: "/img/pirate.png" },
-    { name: "Pirate", text: "Arrrgh! Curses! The treasure is yours... for now. But this captain will sail again!", img: "/img/pirate.png" }
+    { name: "Pirate", text: "Harrr! Not bad for a land scholar! But that was just the warm-up!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Blimey! Another right answer?! Ye must have Neptune whisperin’ in yer ear!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Curses! Even me parrot couldn’t solve that one! But try this, smarty boots!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Shiver me brain cells! Ye cracked it again!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Arrrgh! No way a scholar beats a pirate at wit! Yet here ye are!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "By the tides, ye’re a devil of logic, ain’t ye?", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Enough! Ye’ve bested me, scholar. The sea bows to yer wisdom… for now.", img: "/img/pirate.png" }
   ],
 
+  // 1 — Intro: narrator opens the world
   1: [
-    { name: "Narrator", text: "Bob and Alice meet at the park, the sun shining brightly.", img: "" },
-    { name: "Bob", text: "Glad you made it, Alice! Ready for today’s adventure?", img: "/img/nolan.png" },
-    { name: "Narrator", text: "Bob shows a small, worn-out map with odd markings.", img: "" },
-    { name: "Alice", text: "That looks mysterious… are we hunting treasure?", img: "/img/eliza.png" }
+    { name: "Narrator", text: "Long ago, across the restless sea, stood two kingdoms—Olvindral and Aletheas.", img: "" },
+    { name: "Narrator", text: "Olvindral, a land of castles and men. Aletheas, an island where knowledge was worshiped above gold or gods.", img: "" },
+    { name: "Narrator", text: "But peace shattered when the princess of Olvindral was taken away... by the very scholars of Aletheas.", img: "" },
+    { name: "Narrator", text: "Some say it was love. Others, ambition. Whatever the reason, the king of Olvindral would not stand idle.", img: "" }
   ],
 
+  // 2 — Nolan’s introduction at home
   2: [
-    { name: "Narrator", text: "They sit on a bench, studying the strange map.", img: "" },
-    { name: "Bob", text: "See this mark? Could be a cave… or maybe snacks.", img: "/img/nolan.png" },
-    { name: "Alice", text: "If it’s snacks, I’m first in line.", img: "/img/eliza.png" },
-    { name: "Narrator", text: "They laugh, folding the map carefully before heading off.", img: "" }
+    { name: "Narrator", text: "In a quiet corner of Olvindral, a scholar named Nolan studied beneath candlelight.", img: "" },
+    { name: "Narrator", text: "His room overflowed with books, maps, and ink-stained notes of forgotten wisdom.", img: "" },
+    { name: "Nolan", text: "If the velocity of thought were measurable...", img: "/img/nolan.png" },
+    { name: "Narrator", text: "Before he could finish his mumbling, a loud knock shook the wooden door.", img: "" },
+    { name: "Guard", text: "Sir Nolan! The king summons you at once!", img: "/img/guard.png" },
+    { name: "Nolan", text: "Huh? The king? Did someone misread the address?", img: "/img/nolan.png" },
+    { name: "Narrator", text: "He sighed, closed his book, and followed the guard toward the castle.", img: "" }
   ],
 
+  // 3 — Nolan meets the king
   3: [
-    { name: "Narrator", text: "Walking deeper into the park, Bob balances on a stone wall.", img: "" },
-    { name: "Alice", text: "Careful! You’ll trip showing off like that.", img: "/img/eliza.png" },
-    { name: "Bob", text: "Relax, I’ve got perfect balance… mostly.", img: "/img/nolan.png" },
-    { name: "Narrator", text: "He hops down, and Alice claps at his silly stunt.", img: "" }
+    { name: "King", text: "Nolan of the Scholars. Our princess has been taken across the sea—to Aletheas.", img: "/img/king.png" },
+    { name: "Nolan", text: "I heard the rumors... but why summon me, Your Majesty?", img: "/img/nolan.png" },
+    { name: "King", text: "Because Aletheas values intellect above all. If anyone can speak their language of reason—it’s you.", img: "/img/king.png" },
+    { name: "Nolan", text: "So I am to bring her back?", img: "/img/nolan.png" },
+    { name: "King", text: "Aye. You’ll sail at dawn. And you won’t go alone.", img: "/img/king.png" },
+    { name: "Nolan", text: "Oh, good. Who shall accompany me—an army? a strategist?", img: "/img/nolan.png" },
+    { name: "King", text: "No. You’ll take Bob.", img: "/img/king.png" },
+    { name: "Nolan", text: "Who?", img: "/img/nolan.png" },
+    { name: "Narrator", text: "A man appeared from behind the curtain, chewing on bread, completely unaware of the tension.", img: "" },
+    { name: "Bob", text: "Hey. I’m Bob. I once fought a goose and lost.", img: "/img/bob.png" },
+    { name: "Nolan", text: "Your Majesty, with all due respect—why him?", img: "/img/nolan.png" },
+    { name: "King", text: "For the memes.", img: "/img/king.png" },
+    { name: "Narrator", text: "The hall fell silent. Nolan closed his eyes and accepted his fate.", img: "" }
   ],
 
+  // 4 — The voyage begins
   4: [
-    { name: "Narrator", text: "They stop near a huge oak tree, just like on the map.", img: "" },
-    { name: "Alice", text: "This has to be our first clue.", img: "/img/eliza.png" },
-    { name: "Bob", text: "Only one way to find out!", img: "/img/nolan.png" },
-    { name: "Narrator", text: "They circle the tree and spot a small wooden box half-buried.", img: "" }
+    { name: "Narrator", text: "By dawn, Nolan and Bob boarded a small ship bound for Aletheas.", img: "" },
+    { name: "Nolan", text: "Keep your hands off the compass, Bob.", img: "/img/nolan.png" },
+    { name: "Bob", text: "Relax, I was just wondering if it floats.", img: "/img/bob.png" },
+    { name: "Narrator", text: "The sea was calm, the horizon endless. For a moment, it almost felt peaceful.", img: "" },
+    { name: "Narrator", text: "Until dark clouds rolled in... and shadows emerged from the mist.", img: "" },
+    { name: "Pirate", text: "Ahoy! You sail through the waters of the pirates! Prepare to be boarded!", img: "/img/pirate.png" },
+    { name: "Bob", text: "Oh no, I left my sword at home.", img: "/img/bob.png" },
+    { name: "Nolan", text: "You own a sword?", img: "/img/nolan.png" },
+    { name: "Pirate", text: "No need for steel, scholar. We fight with the mind. Answer me riddles, or sink!", img: "/img/pirate.png" },
+    { name: "Narrator", text: "And thus began the battle of knowledge upon the open sea...", img: "" }
   ],
 
+  // 5 — After defeating the pirates
   5: [
-    { name: "Narrator", text: "Inside the box is a folded note with a short riddle.", img: "" },
-    { name: "Bob", text: "Looks like we need to count steps from the fountain.", img: "/img/nolan.png" },
-    { name: "Alice", text: "Alright, let’s walk it out together.", img: "/img/eliza.png" },
-    { name: "Narrator", text: "They count aloud, stopping at a spot marked on the ground.", img: "" }
-  ],
-
-  6: [
-    { name: "Narrator", text: "Bob kneels down, pointing at the mark carved into the pavement.", img: "" },
-    { name: "Bob", text: "Definitely another clue.", img: "/img/nolan.png" },
-    { name: "Alice", text: "Or just a very artistic scratch.", img: "/img/eliza.png" },
-    { name: "Narrator", text: "They laugh, snapping a photo before marking it on the map.", img: "" }
-  ],
-
-  7: [
-    { name: "Narrator", text: "The sun sets as the park grows quiet around them.", img: "" },
-    { name: "Alice", text: "That was actually really fun.", img: "/img/eliza.png" },
-    { name: "Bob", text: "Yeah. Who knew a map could make the day so exciting?", img: "/img/nolan.png" },
-    { name: "Narrator", text: "They sit back on the bench, smiling at the small adventure.", img: "" }
+    { name: "Pirate", text: "Arrrgh! No mortal bests a pirate! Ye truly be a master o’ the mind.", img: "/img/pirate.png" },
+    { name: "Nolan", text: "Knowledge sails farther than any ship.", img: "/img/nolan.png" },
+    { name: "Pirate", text: "Heh. Spoken like a true scholar. Follow the rising sun, and ye’ll find Aletheas.", img: "/img/pirate.png" },
+    { name: "Narrator", text: "The pirates saluted as Nolan’s ship sailed away, the storm giving way to calm waters once more.", img: "" },
+    { name: "Bob", text: "So… do pirates always do math before attacking?", img: "/img/bob.png" },
+    { name: "Nolan", text: "Apparently.", img: "/img/nolan.png" },
+    { name: "Narrator", text: "The two sailed onward, unaware of the darker truths waiting across the sea.", img: "" }
   ]
 };
+
 
 
 
@@ -208,49 +225,83 @@ function skipDialogue() {
 
 const questions = {
   1: {
-    question: "What is the capital of France?",
+    question: "What is the largest planet in our solar system?",
     answers: [
-      "A. Madrid",
-      "B. Berlin",
-      "C. Paris",
-      "D. Rome"
+      "A. Earth",
+      "B. Mars",
+      "C. Jupiter",
+      "D. Neptune"
     ],
     rightAnswer: "C"
   },
 
   2: {
-    question: "Which planet is known as the Red Planet?",
+    question: "Which animal is known as the King of the Jungle?",
     answers: [
-      "A. Venus",
-      "B. Mars",
-      "C. Jupiter",
-      "D. Saturn"
+      "A. Tiger",
+      "B. Lion",
+      "C. Elephant",
+      "D. Bear"
     ],
     rightAnswer: "B"
   },
 
   3: {
-    question: "Who wrote 'Romeo and Juliet'?",
+    question: "What color do you get when you mix blue and yellow?",
     answers: [
-      "A. Charles Dickens",
-      "B. William Shakespeare",
-      "C. Mark Twain",
-      "D. Jane Austen"
+      "A. Purple",
+      "B. Green",
+      "C. Orange",
+      "D. Brown"
     ],
     rightAnswer: "B"
   },
 
   4: {
-    question: "Which is the largest ocean on Earth?",
+    question: "How many continents are there on Earth?",
     answers: [
-      "A. Atlantic Ocean",
-      "B. Indian Ocean",
-      "C. Arctic Ocean",
-      "D. Pacific Ocean"
+      "A. Five",
+      "B. Six",
+      "C. Seven",
+      "D. Eight"
     ],
-    rightAnswer: "D"
+    rightAnswer: "C"
+  },
+
+  5: {
+    question: "Which metal is liquid at room temperature?",
+    answers: [
+      "A. Iron",
+      "B. Mercury",
+      "C. Silver",
+      "D. Copper"
+    ],
+    rightAnswer: "B"
+  },
+
+  6: {
+    question: "Which gas do plants absorb from the atmosphere?",
+    answers: [
+      "A. Oxygen",
+      "B. Nitrogen",
+      "C. Carbon Dioxide",
+      "D. Hydrogen"
+    ],
+    rightAnswer: "C"
+  },
+
+  7: {
+    question: "What is the fastest land animal?",
+    answers: [
+      "A. Cheetah",
+      "B. Horse",
+      "C. Leopard",
+      "D. Falcon"
+    ],
+    rightAnswer: "A"
   }
 };
+
 
 const totalQuestions = Object.keys(questions).length;
 let currentQuestion = 1;
@@ -411,7 +462,7 @@ function startBattle() {
 
 function transition() {
   const transition = document.querySelector(".transition");
-  const transitionAudio = new Audio("/audio/battle-start.mp3");
+  const transitionAudio = new Audio("/audio/transition.mp3");
 
   transitionAudio.play();
 
@@ -422,7 +473,7 @@ function transition() {
 
   setTimeout(() => {
     transition.classList.add("hidden");
-    showQuestion();
+    showDialogue();
   }, 2000);
 }
 
