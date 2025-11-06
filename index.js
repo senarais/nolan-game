@@ -1,18 +1,12 @@
 import express from "express";
-import bodyParser from "body-parser";
+import serverless from "serverless-http";
+import path from "path";
 
 const app = express();
-const port = process.env.PORT || 4000;
 
 app.set("view engine", "ejs");
+app.set("views", path.join(process.cwd(), "views"));
 app.use(express.static("public"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-
-
-
-
 
 app.get("/", (req, res) => {
   res.render("index.ejs");
@@ -22,10 +16,6 @@ app.get("/level1", (req, res) => {
   res.render("level1.ejs");
 });
 
-
-
-
-
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+// ❗ Jangan panggil app.listen()
+// Ekspor handler untuk Vercel
+export default serverless(app);
