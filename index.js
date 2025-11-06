@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -27,5 +27,5 @@ app.get("/level1", (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`API is running at http://localhost:${port}`);
+  console.log(`Server is running at http://localhost:${port}`);
 });
