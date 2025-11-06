@@ -5,37 +5,37 @@ function timeline() {
   if (timelineIndex === 1) {
     transition();
     setTimeout(() => {
-      bg.style.backgroundImage = "url(/public/img/map.png)";
+      bg.style.backgroundImage = "url(/img/map.png)";
     }, 1500);
   }
   if (timelineIndex === 2) {
     transition();
     setTimeout(() => {
-      bg.style.backgroundImage = "url(/public/img/house.png)";
+      bg.style.backgroundImage = "url(/img/house.png)";
     }, 1000);
   }
   if (timelineIndex === 3) {
     transition();
     setTimeout(() => {
-      bg.style.backgroundImage = "url(/public/img/castle.png)";
+      bg.style.backgroundImage = "url(/img/castle.png)";
     }, 1000);
   }
   if (timelineIndex === 4) {
     transition();
     setTimeout(() => {
-      bg.style.backgroundImage = "url(/public/img/castle2.png)";
+      bg.style.backgroundImage = "url(/img/castle2.png)";
     }, 1000);
   }
   if (timelineIndex === 5) {
     transition();
     setTimeout(() => {
-      bg.style.backgroundImage = "url(/public/img/sea.png)";
+      bg.style.backgroundImage = "url(/img/sea.png)";
     }, 1000);
   }
   if (timelineIndex === 6) {
     transition();
     setTimeout(() => {
-      bg.style.backgroundImage = "url(/public/img/sea2.png)";
+      bg.style.backgroundImage = "url(/img/sea2.png)";
     }, 1000);
   }
   if (timelineIndex === 7) {
@@ -43,13 +43,13 @@ function timeline() {
       startBattle();
     }, 2000);
     setTimeout(() => {
-      bg.style.backgroundImage = "url(/public/img/sea-blur.png)";
+      bg.style.backgroundImage = "url(/img/sea-blur.png)";
     }, 2000);
   }
   if (timelineIndex === 8) {
     transition();
     setTimeout(() => {
-      bg.style.backgroundImage = "url(/public/img/sea2.png)";
+      bg.style.backgroundImage = "url(/img/sea2.png)";
       document.querySelector(".question").classList.add("hidden");
       textBox.classList.add("hidden");
     }, 1000);
@@ -57,7 +57,7 @@ function timeline() {
   if (timelineIndex === 9) {
     transition();
     setTimeout(() => {
-      bg.style.backgroundImage = "url(/public/img/sea.png)";
+      bg.style.backgroundImage = "url(/img/sea.png)";
     }, 1000);
   }
   if (timelineIndex === 10) {
@@ -79,16 +79,16 @@ const dialogues = {
 
   // 0 — Pirate reacts to correct answers (10 riddles total)
   0: [
-    { name: "Pirate", text: "Harrr! Ye got the first one right — pure luck, I say!", img: "/public/img/pirate.png" },
-    { name: "Pirate", text: "Blast me beard! Another right one?! Ye’re cheatin’ with them scholar tricks!", img: "/public/img/pirate.png" },
-    { name: "Pirate", text: "Me parrot fainted! Nobody’s supposed to get that right!", img: "/public/img/pirate.png" },
-    { name: "Pirate", text: "Shiver me sanity! Ye’ve got brains sharper than me cutlass!", img: "/public/img/pirate.png" },
-    { name: "Pirate", text: "Arrrgh! I’ll eat me hat if ye get another one!", img: "/public/img/pirate.png" },
-    { name: "Pirate", text: "How in the seven seas—?! That was impossible!", img: "/public/img/pirate.png" },
-    { name: "Pirate", text: "By Poseidon’s toenail, ye’re makin’ a fool o’ me crew!", img: "/public/img/pirate.png" },
-    { name: "Pirate", text: "I can hear me ancestors cryin’ from Davy Jones’ locker!", img: "/public/img/pirate.png" },
-    { name: "Pirate", text: "Stop! Ye makin’ the ocean look dumb!", img: "/public/img/pirate.png" },
-    { name: "Pirate", text: "Fine! Ye win, scholar! I’ll not mess with the brain of Olvindral again!", img: "/public/img/pirate.png" }
+    { name: "Pirate", text: "Harrr! Ye got the first one right — pure luck, I say!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Blast me beard! Another right one?! Ye’re cheatin’ with them scholar tricks!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Me parrot fainted! Nobody’s supposed to get that right!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Shiver me sanity! Ye’ve got brains sharper than me cutlass!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Arrrgh! I’ll eat me hat if ye get another one!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "How in the seven seas—?! That was impossible!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "By Poseidon’s toenail, ye’re makin’ a fool o’ me crew!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "I can hear me ancestors cryin’ from Davy Jones’ locker!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Stop! Ye makin’ the ocean look dumb!", img: "/img/pirate.png" },
+    { name: "Pirate", text: "Fine! Ye win, scholar! I’ll not mess with the brain of Olvindral again!", img: "/img/pirate.png" }
   ],
 
   // 1 — Prologue
@@ -105,99 +105,105 @@ const dialogues = {
   // 2 — Nolan’s introduction at home
   2: [
     { name: "Narrator", text: "Inside a small study, books towered like walls. Ink stained every surface — the battlefield of Nolan’s thoughts.", img: "" },
-    { name: "Nolan", text: "If truth is the weight of knowledge, then ignorance must be lighter than air...", img: "/public/img/nolan.png" },
+    { name: "Nolan", text: "If truth is the weight of knowledge, then ignorance must be lighter than air...", img: "/img/nolan.png" },
     { name: "Narrator", text: "A loud knock shook the door.", img: "" },
-    { name: "Guard", text: "Sir Nolan! The king summons you immediately!", img: "/public/img/guard.png" },
-    { name: "Nolan", text: "Oh. Either he wants advice or I’ve finally been outlawed for thinking too hard.", img: "/public/img/nolan.png" },
+    { name: "Guard", text: "Sir Nolan! The king summons you immediately!", img: "/img/guard.png" },
+    { name: "Nolan", text: "Oh. Either he wants advice or I’ve finally been outlawed for thinking too hard.", img: "/img/nolan.png" },
     { name: "Narrator", text: "Without another word, the guard led him through the stone halls of Olvindral Castle.", img: "" }
   ],
 
   // 3 — Nolan meets the King
   3: [
-    { name: "King", text: "Nolan of the Scholars. I’ve heard your wisdom can tear apart empires.", img: "/public/img/king.png" },
-    { name: "Nolan", text: "Only the weak ones, Your Majesty.", img: "/public/img/nolan.png" },
-    { name: "King", text: "Our princess has been taken to Aletheas. We need her back — alive and unharmed.", img: "/public/img/king.png" },
-    { name: "Nolan", text: "So you want me to... outsmart an entire nation of geniuses? I barely outsmarted breakfast this morning.", img: "/public/img/nolan.png" },
-    { name: "King", text: "You are the only one who can speak their language — reason. Steel won’t break their walls, but words might.", img: "/public/img/king.png" },
-    { name: "Nolan", text: "And what if they don’t listen to reason?", img: "/public/img/nolan.png" },
-    { name: "King", text: "Then you’ll improvise. You leave at dawn. You won’t go alone.", img: "/public/img/king.png" },
-    { name: "Nolan", text: "Ah. Reinforcements. That’s comforting.", img: "/public/img/nolan.png" },
-    { name: "King", text: "You’ll take Bob.", img: "/public/img/king.png" },
-    { name: "Nolan", text: "...Who?", img: "/public/img/nolan.png" },
+    { name: "King", text: "Nolan of the Scholars. I’ve heard your wisdom can tear apart empires.", img: "/img/king.png" },
+    { name: "Nolan", text: "Only the weak ones, Your Majesty.", img: "/img/nolan.png" },
+    { name: "King", text: "Our princess has been taken to Aletheas. We need her back — alive and unharmed.", img: "/img/king.png" },
+    { name: "Nolan", text: "So you want me to... outsmart an entire nation of geniuses? I barely outsmarted breakfast this morning.", img: "/img/nolan.png" },
+    { name: "King", text: "You are the only one who can speak their language — reason. Steel won’t break their walls, but words might.", img: "/img/king.png" },
+    { name: "Nolan", text: "And what if they don’t listen to reason?", img: "/img/nolan.png" },
+    { name: "King", text: "Then you’ll improvise. You leave at dawn. You won’t go alone.", img: "/img/king.png" },
+    { name: "Nolan", text: "Ah. Reinforcements. That’s comforting.", img: "/img/nolan.png" },
+    { name: "King", text: "You’ll take Bob.", img: "/img/king.png" },
+    { name: "Nolan", text: "...Who?", img: "/img/nolan.png" },
     { name: "Narrator", text: "From behind a curtain, a strange man stumbled out — barefoot, holding half a loaf of bread and a pigeon feather.", img: "" }
     
   ],
 
-  // 4 — Introduction of Bob
+  // 4 — Introduction of Bob (same event, separate scene)
   4: [
-    { name: "Bob", text: "Hohh... hooo....", img: "/public/img/bob.png" },
-    { name: "Nolan", text: "He... speaks?", img: "/public/img/nolan.png" },
-    { name: "King", text: "Only that. You’ll understand his value... in time.", img: "/public/img/king.png" },
+    { name: "Bob", text: "Hohh... hooo....", img: "/img/bob.png" },
+    { name: "Nolan", text: "He... speaks?", img: "/img/nolan.png" },
+    { name: "King", text: "Only that. You’ll understand his value... in time.", img: "/img/king.png" },
     { name: "Narrator", text: "Bob poked a candle with his finger, burned himself, and nodded proudly.", img: "" },
-    { name: "Nolan", text: "Your Majesty, I feel the need to clarify that I am a scholar, not a babysitter.", img: "/public/img/nolan.png" },
-    { name: "King", text: "Consider it a test of patience. For the memes.", img: "/public/img/king.png" },
+    { name: "Nolan", text: "Your Majesty, I feel the need to clarify that I am a scholar, not a babysitter.", img: "/img/nolan.png" },
+    { name: "King", text: "Consider it a test of patience. For the memes.", img: "/img/king.png" },
     { name: "Narrator", text: "Thus, the most dangerous mind in the kingdom was paired with the strangest man alive.", img: "" }
   ],
 
   // 5 — Voyage begins
   5: [
     { name: "Narrator", text: "Under a bright blue sky, Nolan and Bob sailed toward Aletheas.", img: "" },
-    { name: "Nolan", text: "Don’t touch the compass, Bob.", img: "/public/img/nolan.png" },
-    { name: "Bob", text: "Hohh... hooo....", img: "/public/img/bob.png" },
+    { name: "Nolan", text: "Don’t touch the compass, Bob.", img: "/img/nolan.png" },
+    { name: "Bob", text: "Hohh... hooo....", img: "/img/bob.png" },
     { name: "Narrator", text: "Bob licked the compass anyway, then stared at it like it revealed the secrets of the universe.", img: "" },
-    { name: "Nolan", text: "Fantastic. Now it points to saliva.", img: "/public/img/nolan.png" },
+    { name: "Nolan", text: "Fantastic. Now it points to saliva.", img: "/img/nolan.png" },
     { name: "Narrator", text: "The sea sparkled, the breeze gentle. It could almost pass for peace — until chaos arrived on schedule.", img: "" }
   ],
 
-  // 6 — Pirate encounter
+  // 6 — Pirate encounter (chaotic, sunny)
   6: [
-    { name: "Pirate", text: "AHOY THERE! WHO DARES CROSS THE SEA OF KNOWLEDGE?!", img: "/public/img/pirate.png" },
-    { name: "Nolan", text: "The sea of... what?", img: "/public/img/nolan.png" },
-    { name: "Pirate", text: "The Sea of KNOWLEDGE! We plunder wisdom, not gold!", img: "/public/img/pirate.png" },
-    { name: "Bob", text: "Hohh... hooo....", img: "/public/img/bob.png" },
+    { name: "Pirate", text: "AHOY THERE! WHO DARES CROSS THE SEA OF KNOWLEDGE?!", img: "/img/pirate.png" },
+    { name: "Nolan", text: "The sea of... what?", img: "/img/nolan.png" },
+    { name: "Pirate", text: "The Sea of KNOWLEDGE! We plunder wisdom, not gold!", img: "/img/pirate.png" },
+    { name: "Bob", text: "Hohh... hooo....", img: "/img/bob.png" },
     { name: "Narrator", text: "Bob saluted with a fish he somehow found on deck.", img: "" },
-    { name: "Pirate", text: "A fine gesture! The lad’s got spirit!", img: "/public/img/pirate.png" },
-    { name: "Nolan", text: "Please stop encouraging him.", img: "/public/img/nolan.png" },
-    { name: "Pirate", text: "Ye two be funny folk. But rules are rules. I’ve got TEN riddles, and if ye fail even one, ye’ll swim home!", img: "/public/img/pirate.png" },
-    { name: "Nolan", text: "And if I win?", img: "/public/img/nolan.png" },
-    { name: "Pirate", text: "Then I’ll personally guide ye to Aletheas! Also… maybe cry a little.", img: "/public/img/pirate.png" },
-    { name: "Bob", text: "Hohh... hooo....", img: "/public/img/bob.png" },
+    { name: "Pirate", text: "A fine gesture! The lad’s got spirit!", img: "/img/pirate.png" },
+    { name: "Nolan", text: "Please stop encouraging him.", img: "/img/nolan.png" },
+    { name: "Pirate", text: "Ye two be funny folk. But rules are rules. I’ve got TEN riddles, and if ye fail even one, ye’ll swim home!", img: "/img/pirate.png" },
+    { name: "Nolan", text: "And if I win?", img: "/img/nolan.png" },
+    { name: "Pirate", text: "Then I’ll personally guide ye to Aletheas! Also… maybe cry a little.", img: "/img/pirate.png" },
+    { name: "Bob", text: "Hohh... hooo....", img: "/img/bob.png" },
     { name: "Narrator", text: "Bob tied a bucket to his own leg and started marching in circles. Nolan pretended not to see it.", img: "" },
-    { name: "Pirate", text: "Alright, scholar! Let the battle of brains begin!", img: "/public/img/pirate.png" }
+    { name: "Pirate", text: "Alright, scholar! Let the battle of brains begin!", img: "/img/pirate.png" }
   ],
 
   // 7 — After defeating the pirates
   7: [
-    { name: "Pirate", text: "ARRRGH! Ye beat me fair and square! I’ve been humiliated on me own deck!", img: "/public/img/pirate.png" },
-    { name: "Nolan", text: "Knowledge sails faster than fear.", img: "/public/img/nolan.png" },
-    { name: "Pirate", text: "Take the path of sunrise — ye’ll find Aletheas there. May the sea favor yer madness!", img: "/public/img/pirate.png" },
-    { name: "Bob", text: "Hohh... hooo....", img: "/public/img/bob.png" },
+    { name: "Pirate", text: "ARRRGH! Ye beat me fair and square! I’ve been humiliated on me own deck!", img: "/img/pirate.png" },
+    { name: "Nolan", text: "Knowledge sails faster than fear.", img: "/img/nolan.png" },
+    { name: "Pirate", text: "Take the path of sunrise — ye’ll find Aletheas there. May the sea favor yer madness!", img: "/img/pirate.png" },
+    { name: "Bob", text: "Hohh... hooo....", img: "/img/bob.png" },
     { name: "Narrator", text: "Bob waved both arms, accidentally slapped himself, then bowed to the pirate ship.", img: "" },
-    { name: "Nolan", text: "I think... he’s saying thank you?", img: "/public/img/nolan.png" },
+    { name: "Nolan", text: "I think... he’s saying thank you?", img: "/img/nolan.png" },
     { name: "Narrator", text: "The pirate crew cheered as Nolan’s ship sailed away, leaving behind laughter and legend.", img: "" }
   ],
 
-  // 8 — Sailing to Aletheas
+  // 8 — Sailing to Aletheas (final scene of part one)
   8: [
     { name: "Narrator", text: "The sea calmed again, as if the waves themselves applauded Nolan’s victory.", img: "" },
-    { name: "Nolan", text: "Well, Bob… we survived pirates armed with riddles. That’s new.", img: "/public/img/nolan.png" },
-    { name: "Bob", text: "Hohh... hooo....", img: "/public/img/bob.png" },
+    { name: "Nolan", text: "Well, Bob… we survived pirates armed with riddles. That’s new.", img: "/img/nolan.png" },
+    { name: "Bob", text: "Hohh... hooo....", img: "/img/bob.png" },
     { name: "Narrator", text: "Bob stood at the edge of the boat, holding a rope like it was a flute, and tried to play it.", img: "" },
-    { name: "Nolan", text: "That’s... not how sound works, Bob.", img: "/public/img/nolan.png" },
-    { name: "Bob", text: "Hohh... hooo....", img: "/public/img/bob.png" },
+    { name: "Nolan", text: "That’s... not how sound works, Bob.", img: "/img/nolan.png" },
+    { name: "Bob", text: "Hohh... hooo....", img: "/img/bob.png" },
     { name: "Narrator", text: "He pointed to the horizon with one hand, the other still pretending to play his rope flute.", img: "" },
-    { name: "Nolan", text: "Wait— that’s land.", img: "/public/img/nolan.png" },
+    { name: "Nolan", text: "Wait— that’s land.", img: "/img/nolan.png" },
     { name: "Narrator", text: "Through the mist of the sea, the white towers of Aletheas shimmered under the sun, tall and proud, like the mind that built them.", img: "" },
-    { name: "Nolan", text: "The island of reason…", img: "/public/img/nolan.png" },
+    { name: "Nolan", text: "The island of reason…", img: "/img/nolan.png" },
     { name: "Narrator", text: "Bob tossed the rope into the water, nodded as if he’d completed some great task, and then sneezed directly into the wind.", img: "" },
-    { name: "Nolan", text: "You’re unbelievable.", img: "/public/img/nolan.png" },
-    { name: "Bob", text: "Hohh... hooo....", img: "/public/img/bob.png" },
+    { name: "Nolan", text: "You’re unbelievable.", img: "/img/nolan.png" },
+    { name: "Bob", text: "Hohh... hooo....", img: "/img/bob.png" },
     { name: "Narrator", text: "As their ship sailed closer, the waves grew quieter — as if the ocean itself was holding its breath.", img: "" },
     { name: "Narrator", text: "Ahead of them lay knowledge, danger, and the truth behind the stolen princess.", img: "" },
     { name: "Narrator", text: "To be continued…", img: "" }
   ]
 
 };
+
+
+
+
+
+
 
 let dialogueIndex = 0;
 const textElement = document.querySelector(".text");
@@ -217,7 +223,7 @@ function textTypingEffect(element, text, i = 0) {
   fullText = text;
 
   return new Promise((resolve) => {
-    const textSound = new Audio("/public/audio/text-blip.mp3");
+    const textSound = new Audio("/audio/text-blip.mp3");
 
     if (i === 0) {
       element.textContent = ""; // clear old text
@@ -240,10 +246,13 @@ function textTypingEffect(element, text, i = 0) {
 }
 
 async function showDialogue() {
+  // Battle Dialogues
+
   if (battleStarted === true && savedCurrentDialogue === undefined) {
     savedCurrentDialogue = currentDialogue;
     currentDialogue = 0;
   }
+
 
   if (dialogueIndex < dialogues[currentDialogue].length) {
     const dialogueDisplay = dialogues[currentDialogue][dialogueIndex].text;
@@ -274,7 +283,12 @@ async function showDialogue() {
   }
 }
 
+// First line
 textBox.classList.add("hidden");
+// setTimeout(() => {
+//   textBox.classList.remove("hidden");
+//   showDialogue();
+// }, 2000);
 
 function nextDialogue(event) {
   if (event.type === "keydown") {
@@ -290,9 +304,12 @@ function nextDialogue(event) {
 
 function skipDialogue() {
   if (isTyping) {
+    // kalau masih ngetik → langsung tampilkan teks penuh
     clearTimeout(typingTimeout);
     textElement.textContent = fullText;
     isTyping = false;
+
+    // pasang lagi listener supaya bisa lanjut
     document.addEventListener("click", nextDialogue);
     document.addEventListener("keydown", nextDialogue);
     return;
@@ -301,10 +318,14 @@ function skipDialogue() {
     dialogueIndex++;
     showQuestion();
   } else if (battleStarted === false) {
+    // kalau sudah penuh → lanjut ke berikutnya
     dialogueIndex++;
     showDialogue();
   }
 }
+
+
+
 
 const questions = {
   1: {
@@ -317,6 +338,7 @@ const questions = {
     ],
     rightAnswer: "B"
   },
+
   2: {
     question: "What color do you get when you mix red and blue?",
     answers: [
@@ -327,6 +349,7 @@ const questions = {
     ],
     rightAnswer: "B"
   },
+
   3: {
     question: "Which Greek philosopher taught Alexander the Great?",
     answers: [
@@ -337,6 +360,7 @@ const questions = {
     ],
     rightAnswer: "C"
   },
+
   4: {
     question: "What is the hardest natural substance on Earth?",
     answers: [
@@ -347,6 +371,7 @@ const questions = {
     ],
     rightAnswer: "C"
   },
+
   5: {
     question: "Which planet is known as the Morning Star?",
     answers: [
@@ -357,6 +382,7 @@ const questions = {
     ],
     rightAnswer: "B"
   },
+
   6: {
     question: "In medieval times, what was a blacksmith’s main work?",
     answers: [
@@ -367,6 +393,7 @@ const questions = {
     ],
     rightAnswer: "B"
   },
+
   7: {
     question: "Which animal was sacred in ancient Egypt?",
     answers: [
@@ -377,6 +404,7 @@ const questions = {
     ],
     rightAnswer: "B"
   },
+
   8: {
     question: "Who is the legendary king associated with the Knights of the Round Table?",
     answers: [
@@ -387,6 +415,7 @@ const questions = {
     ],
     rightAnswer: "A"
   },
+
   9: {
     question: "Which element did ancient alchemists try to turn into gold?",
     answers: [
@@ -397,6 +426,7 @@ const questions = {
     ],
     rightAnswer: "C"
   },
+
   10: {
     question: "Which ocean lies between Africa and Australia?",
     answers: [
@@ -409,6 +439,8 @@ const questions = {
   }
 };
 
+
+
 const totalQuestions = Object.keys(questions).length;
 let currentQuestion = 1;
 let questionCurrentTime = 10;
@@ -416,7 +448,8 @@ let questionTimeout;
 let battleStarted = false;
 const timeText = document.querySelector(".clock-icon p");
 const answerElement = document.querySelectorAll(".question-container button");
-const clockTick = new Audio("/public/audio/clock-tick.mp3");
+const clockTick = new Audio("/audio/clock-tick.mp3");
+
 
 function showQuestion() {
   if (currentQuestion > totalQuestions) {
@@ -463,11 +496,15 @@ function nextQuestion() {
   showQuestion();
 }
 
+
+
+
 function checkAnswer(answer) {
   const rightAnswer = questions[currentQuestion].rightAnswer;
 
   if (!answer) {
-    const wrongAudio = new Audio("/public/audio/wrong-answer.mp3");
+    // berarti waktu habis / gak ada jawaban
+    const wrongAudio = new Audio("/audio/wrong-answer.mp3");
     wrongAudio.play();
 
     clearTimeout(questionTimeout);
@@ -481,11 +518,12 @@ function checkAnswer(answer) {
     dialogueIndex = 0;
     currentQuestion = 1;
 
+
     setTimeout(() => {
       gameOver();
     }, 400);
 
-    return;
+    return; // stop supaya gak error
   }
 
   const userAnswer = answer.value;
@@ -493,7 +531,7 @@ function checkAnswer(answer) {
 
   if (userAnswer !== rightAnswer) {
     answerContainer.style.backgroundColor = "#ff5757";
-    const wrongAudio = new Audio("/public/audio/wrong-answer.mp3");
+    const wrongAudio = new Audio("/audio/wrong-answer.mp3");
     wrongAudio.play();
 
     clearTimeout(questionTimeout);
@@ -517,7 +555,7 @@ function checkAnswer(answer) {
 
   if (rightAnswer === userAnswer) {
     answerContainer.style.backgroundColor = "#48ae51";
-    const correctAudio = new Audio("/public/audio/right-answer.mp3");
+    const correctAudio = new Audio("/audio/right-answer.mp3");
     correctAudio.play();
     clearTimeout(questionTimeout);
     questionCurrentTime = 10;
@@ -539,13 +577,14 @@ function checkAnswer(answer) {
 function startBattle() {
   battleStarted = true;
   const battle = document.querySelector(".battleStart");
-  const battleStartAudio = new Audio("/public/audio/battle-start.mp3");
+  const battleStartAudio = new Audio("/audio/battle-start.mp3");
+
 
   battleStartAudio.play();
 
-  battle.classList.remove("hidden");
-  battle.classList.remove("battleTransition");
-  void battle.offsetWidth;
+  battle.classList.remove("hidden"); // reset animasi kalau sudah ada
+  battle.classList.remove("battleTransition"); // reset animasi kalau sudah ada
+  void battle.offsetWidth;                     // hack biar animasi bisa replay
   battle.classList.add("battleTransition");
 
   setTimeout(() => {
@@ -553,16 +592,19 @@ function startBattle() {
     showQuestion();
   }, 2000);
 } 
+// setTimeout(() => {
+//   startBattle();
+// }, 2000);
 
 function transition() {
   const transition = document.querySelector(".transition");
-  const transitionAudio = new Audio("/public/audio/transition.mp3");
+  const transitionAudio = new Audio("/audio/transition.mp3");
 
   transitionAudio.play();
 
-  transition.classList.remove("hidden");
-  transition.classList.remove("battleTransition");
-  void transition.offsetWidth;
+  transition.classList.remove("hidden"); // reset animasi kalau sudah ada
+  transition.classList.remove("battleTransition"); // reset animasi kalau sudah ada
+  void transition.offsetWidth;                     // hack biar animasi bisa replay
   transition.classList.add("battleTransition");
 
   setTimeout(() => {
@@ -579,6 +621,10 @@ function gameOver() {
 }
 
 function restartGame() {
+  // setTimeout(() => {
+  //   gameOverContainer.classList.add("hidden");
+  //   timeline();
+  // }, 1000);
   gameOverContainer.classList.add("hidden");
   document.querySelector(".question").classList.add("hidden");
   timeline();
