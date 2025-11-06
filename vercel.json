@@ -1,17 +1,21 @@
 {
   "version": 2,
-  "routes": [
+  "builds": [
     {
-      "src": "/level1",
-      "dest": "/level1.html"
+      "src": "index.html",
+      "use": "@vercel/static"
     },
     {
-      "src": "/",
-      "dest": "/index.html"
+      "src": "level1.html",
+      "use": "@vercel/static"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "public/**/*",
+      "use": "@vercel/static"
     }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/level1", "dest": "/level1.html" }
   ]
 }
